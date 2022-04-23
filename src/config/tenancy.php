@@ -20,7 +20,7 @@ return [
     'database' => [
         // 租户数据库连接
         'tenant_connect' => 'tenant',
-        // 租户子域名
+        // 租户子域名字段
         'sub_domain_field' => 'sub_domain',
         // 租户数据库名称字段
         'db_name_field' => 'db_name',
@@ -52,9 +52,8 @@ return [
     'reset_cache' => true,
     /*
      * 新的缓存配置
-     * TODO 此处实现的不完美，如果缓存驱动为`file`，那么下方的配置将不会生效，目前还在查找原因,
-     *
-     * 临时解决方案是手动修改`config/cache.php`中的`stores['file']['type']`的值为`\think\tenancy\driver\TenancyFileCacheDriver::class`,
+     * TODO 此处实现的不完美，如果缓存驱动为`file`，那么请先修改下方的配置，
+     * 然后手动修改`config/cache.php`中的`stores['file']['type']`的值为`\think\tenancy\driver\TenancyFileCacheDriver::class`。
      * 其他缓存驱动还没有测试，您可以参考`\think\tenancy\driver\TenancyFileCacheDriver::class`自行处理。
      */
     'overwrite_cache_config' => [

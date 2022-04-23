@@ -18,16 +18,6 @@ class TenancyFileCacheDriver extends File implements CacheHandlerInterface
 {
     public function __construct(App $app)
     {
-        $subdomain = request()->subDomain();
-        $path = $subdomain
-            ? $app->getRuntimePath().'cache'.\DIRECTORY_SEPARATOR.'tenants'.\DIRECTORY_SEPARATOR.$subdomain.\DIRECTORY_SEPARATOR
-            : '';
-        $options = [
-            'path' => $path,
-            'prefix' => $subdomain,
-            'tag_prefix' => 'tag:'.$subdomain.':',
-        ];
-
-        parent::__construct($app, $options);
+        parent::__construct($app, config('tenancy.overwrite_cache_config.file'));
     }
 }
