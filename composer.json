@@ -41,10 +41,7 @@
 		}
 	},
 	"scripts": {
-		"test": "vendor/bin/phpunit --colors",
-		"post-autoload-dump": [
-			"@php think tenants:publish"
-		]
+		"test": "vendor/bin/phpunit --colors"
 	},
 	"minimum-stability": "dev",
 	"config": {
