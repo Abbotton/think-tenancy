@@ -41,7 +41,7 @@ class SeedCreate extends BaseCreate
 
         $path = $this->getPath();
 
-        if (!file_exists($path)) {
+        if (! file_exists($path)) {
             mkdir($path, 0755, true);
         }
 
@@ -51,7 +51,7 @@ class SeedCreate extends BaseCreate
 
         $className = $input->getArgument('name');
 
-        if (!Util::isValidPhinxClassName($className)) {
+        if (! Util::isValidPhinxClassName($className)) {
             throw new \InvalidArgumentException(sprintf('The seed class name "%s" is invalid. Please use CamelCase format', $className));
         }
 

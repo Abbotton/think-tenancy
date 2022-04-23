@@ -8,7 +8,7 @@ declare(strict_types=1);
  * @author Abbotton <uctoo@foxmail.com>
  */
 
-if (!function_exists('tenancy')) {
+if (! function_exists('tenancy')) {
     /**
      * @return object|\think\App
      */
