@@ -1,5 +1,9 @@
 # 基于ThinkPHP6开发的多租户扩展
 
+<div style="text-align: center;">
+  <img src="assets/banner.png" style="width: 60%;">
+</div>
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/abbotton/think-tenancy.svg?style=flat-square)](https://packagist.org/packages/abbotton/think-tenancy)
 [![Total Downloads](https://img.shields.io/packagist/dt/abbotton/think-tenancy.svg?style=flat-square)](https://packagist.org/packages/abbotton/think-tenancy)
 ![GitHub Actions](https://github.com/abbotton/think-tenancy/actions/workflows/main.yml/badge.svg)
