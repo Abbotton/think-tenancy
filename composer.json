@@ -1,0 +1,63 @@
+{
+	"name": "abbotton/think-tenancy",
+	"description": "基于ThinkPHP6开发的多租户SAAS扩展",
+	"keywords": [
+		"abbotton",
+		"think-tenancy",
+		"think-saas",
+		"thinkphp",
+		"thinkphp-saas"
+	],
+	"homepage": "https://github.com/abbotton/think-tenancy",
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Abbotton",
+			"email": "uctoo@foxmail.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=7.2.5",
+		"topthink/framework": ">=6.0",
+		"topthink/think-migration": ">=3.0",
+		"symfony/finder": ">=5.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"think\\tenancy\\": "src"
+		},
+		"files": [
+			"src/helper.php"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"think\\tenancy\\tests\\": "tests"
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/phpunit --colors",
+		"post-autoload-dump": [
+			"@php think tenants:publish"
+		]
+	},
+	"minimum-stability": "dev",
+	"config": {
+		"sort-packages": true
+	},
+	"extra": {
+		"think": {
+			"services": [
+				"think\\tenancy\\Service"
+			],
+			"config": {
+				"tenancy": "src/config/tenancy.php"
+			}
+		}
+	}
+}
