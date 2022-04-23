@@ -14,7 +14,7 @@ return [
     // 主域名配置，所有主域名都不会走多租户逻辑。
     'central_domains' => [
         '127.0.0.1',
-        'localhost'
+        'localhost',
     ],
     // 数据库相关配置
     'database' => [
