@@ -1,8 +1,8 @@
 # 基于ThinkPHP6开发的多租户扩展
 
-<div style="text-align: center;">
-  <img src="assets/banner.png" style="width: 60%;">
-</div>
+<p align="center">
+  <img src="https://banners.beyondco.de/Think%20Tenancy.png?theme=light&packageManager=composer+require&packageName=abbotton%2Fthink-tenancy&pattern=floatingCogs&style=style_1&description=Multiple+tenancy+for+ThinkPHP&md=1&showWatermark=1&fontSize=100px&images=server" style="width: 80%;">
+</p>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/abbotton/think-tenancy.svg?style=flat-square)](https://packagist.org/packages/abbotton/think-tenancy)
 [![Total Downloads](https://img.shields.io/packagist/dt/abbotton/think-tenancy.svg?style=flat-square)](https://packagist.org/packages/abbotton/think-tenancy)
