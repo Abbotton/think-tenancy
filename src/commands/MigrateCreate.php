@@ -26,11 +26,11 @@ class MigrateCreate extends BaseMigrate
     {
         $path = $this->path ?: config('tenancy.migration_path');
 
-        if (!is_dir($path) && !mkdir($path, 0755, true)) {
+        if (! is_dir($path) && ! mkdir($path, 0755, true)) {
             throw new InvalidArgumentException(sprintf('directory "%s" does not exist', $path));
         }
 
-        if (!is_writable($path)) {
+        if (! is_writable($path)) {
             throw new InvalidArgumentException(sprintf('directory "%s" is not writable', $path));
         }
 

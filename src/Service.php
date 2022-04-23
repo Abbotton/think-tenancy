@@ -23,7 +23,7 @@ class Service extends BaseService
 
     public function boot(): void
     {
-        if (!$this->app->runningInConsole()) {
+        if (! $this->app->runningInConsole()) {
             if (\in_array($this->app->request->host(true), config('tenancy.central_domains'), true)) {
                 return;
             }
@@ -48,11 +48,11 @@ class Service extends BaseService
 
     private function validateTenancy($tenant): void
     {
-        if (!$tenant) {
+        if (! $tenant) {
             throw new Exception('未找到相关资源', 404);
         }
 
-        if (!$tenant[config('tenancy.database.status_field')]) {
+        if (! $tenant[config('tenancy.database.status_field')]) {
             throw new Exception('当前租户已暂停使用', 403);
         }
 

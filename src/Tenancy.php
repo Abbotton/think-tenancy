@@ -42,10 +42,10 @@ class Tenancy
      */
     public function initialize($tenant): void
     {
-        if (!\is_object($tenant)) {
+        if (! \is_object($tenant)) {
             $subdomain = $tenant;
             $tenant = $this->find($subdomain);
-            if (!$tenant) {
+            if (! $tenant) {
                 throw new Exception('未找到相关资源', 404);
             }
         }
@@ -83,7 +83,7 @@ class Tenancy
     {
         event(new EndingTenancy($this));
 
-        if (!$this->initialized) {
+        if (! $this->initialized) {
             return;
         }
 

@@ -40,12 +40,12 @@ class Publish extends Command
      */
     protected function copyDir($dir, $src, $cover = false): void
     {
-        if (is_dir($src) && !$cover) {
+        if (is_dir($src) && ! $cover) {
             if ($this->output->confirm($this->input, "确认覆盖资源文件目录[{$src}]? [y]/n")) {
                 $cover = true;
             }
         } else {
-            if (!is_dir($src)) {
+            if (! is_dir($src)) {
                 mkdir($src, 0755);
             }
             $cover = true;
@@ -56,7 +56,7 @@ class Publish extends Command
                 $path = $file->getRealPath();
                 $makePath = $src.\DIRECTORY_SEPARATOR.$file->getRelativePath().\DIRECTORY_SEPARATOR.$file->getFilename();
                 if (is_dir($path)) {
-                    if (!is_dir($makePath)) {
+                    if (! is_dir($makePath)) {
                         mkdir($makePath, 0755);
                     }
                 } else {
