@@ -66,9 +66,14 @@ class Tenancy
         event(new TenancyInitialized($this));
     }
 
-    public function find($subdomain = ''): ?Tenant
+    public function find($subdomain = '')
     {
-        return $this->model()->where($this->subDomainField, $subdomain ?? request()->subDomain())->find();
+        $subdomain = $subdomain ?? request()->subDomain();
+        if ($subdomain) {
+            return $this->model()->where($this->subDomainField, $subdomain)->find();
+        }
+
+        return '';
     }
 
     /** @return Model|Tenant */
