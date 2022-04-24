@@ -23,6 +23,12 @@ class TestCase extends BaseTestCase
         $this->app = new App();
         $configFile = dirname(__DIR__).DIRECTORY_SEPARATOR.'src'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'tenancy.php';
         $this->app->config->load($configFile);
+        $this->app->config->set([
+            'central_domains' => [
+                '127.0.0.1',
+                'localhost'
+            ]
+        ]);
         $this->app->bind('tenancy', Service::class);
         parent::setUp();
     }
