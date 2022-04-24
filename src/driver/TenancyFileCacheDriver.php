@@ -18,6 +18,10 @@ class TenancyFileCacheDriver extends File implements CacheHandlerInterface
 {
     public function __construct(App $app)
     {
-        parent::__construct($app, config('tenancy.overwrite_cache_config.file'));
+        $options = config('tenancy.reset_cache') == true && tenancy()->find()
+            ? config('tenancy.overwrite_cache_config.file')
+            : [];
+
+        parent::__construct($app, $options);
     }
 }
