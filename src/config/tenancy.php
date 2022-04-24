@@ -15,7 +15,6 @@ return [
     'central_domains' => [
         '127.0.0.1',
         'localhost',
-        str_replace(['http://', 'https://'], '', config('app.app_host')),
     ],
     // 数据库相关配置
     'database' => [
