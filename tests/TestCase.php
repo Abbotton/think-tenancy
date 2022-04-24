@@ -26,8 +26,8 @@ class TestCase extends BaseTestCase
         $this->app->config->set([
             'central_domains' => [
                 '127.0.0.1',
-                'localhost'
-            ]
+                'localhost',
+            ],
         ]);
         $this->app->bind('tenancy', Service::class);
         parent::setUp();
